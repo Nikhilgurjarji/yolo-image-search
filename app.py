@@ -255,7 +255,7 @@ if st.session_state.search_results:
                         draw.rectangle(bbox , outline = color , width = thickness)
 
                         if cls in search_params["selected_classes"] or not st.session_state.highlight_matches:
-                            label = f"{cls}{det["conf"]:.2f}"
+                            label = f"{cls}{det['conf']:.2f}"
                             text_bbox = draw.textbbox((0,0),label ,font)
                             text_width = text_bbox[2] - text_bbox[0] #x2 - x1
                             text_height = text_bbox[3] - text_bbox[1] #y2 - y1
@@ -279,7 +279,7 @@ if st.session_state.search_results:
                 </div>
                 """,unsafe_allow_html=True)
             except Exception as e:
-                st.error(f"Error loading {result["image_path"]} , {str(e)}")
+                st.error(f"Error loading {result['image_path']}")
         
         col_index = (col_index + 1) % st.session_state.grid_columns
     
